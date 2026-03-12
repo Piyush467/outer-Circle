@@ -7,6 +7,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'; // Ensure path is correct
 import TermsAndConditions from './pages/TermsAndConditions';
 import ContactPage from './pages/ContactPage';
 import CommunityPage from './compontents/community/CommunityPage';
+import EventDetailsPage from './compontents/community/EventDetailsPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         {/* community page */}
         <Route path="/community" element={<CommunityPage />} />
+        <Route path="/event/:id" element={<EventDetailsPage />} />
         
         {/* Contact Route */}
         <Route path="/contact" element={<ContactPage />} />
