@@ -41,21 +41,24 @@ const Footer = () => {
                     {/* Col 2: Quick Links */}
                     <div className="md:pl-10"> {/* Added padding-left for better spacing */}
                         <h4 className="text-lg font-bold text-gray-900 mb-6">Quick Links</h4>
-                        <ul className="space-y-4 text-gray-500 text-sm">
-                            {['Home', 'About', 'How it Works', 'Testimonials', 'Contact'].map((item) => (
-                                <li key={item}>
-                                    {item === 'Contact' ? (
-                                        <Link to="/contact" className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group">
-                                            {item}
-                                        </Link>
-                                    ) : (
-                                        <a href={`/#${item.replace(/\s+/g, '-').toLowerCase()}`} className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group">
-                                            {item}
-                                        </a>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
+                       <ul className="space-y-4 text-gray-500 text-sm">
+  {['Home', 'About', 'How it Works', 'Testimonials', 'Community', 'Contact'].map((item) => (
+    <li key={item}>
+      {item === 'Contact' ? (
+        <Link to="/contact" className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group">
+          {item}
+        </Link>
+      ) : (
+        <a
+          href={`/#${item.replace(/\s+/g, '-').toLowerCase()}`}
+          className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group"
+        >
+          {item}
+        </a>
+      )}
+    </li>
+  ))}
+</ul>
                     </div>
 
                     {/* Col 3: Get the App */}
