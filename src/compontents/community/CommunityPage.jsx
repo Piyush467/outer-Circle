@@ -1,5 +1,6 @@
 import React from "react";
-import communityData from "./communityData";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 import CommunityHeader from "./CommunityHeader";
 import CommunityDescription from "./CommunityDescription";
@@ -8,24 +9,34 @@ import HostSection from "./HostSection";
 import LocationSection from "./LocationSection";
 import ReviewsSection from "./ReviewsSection";
 
+import communityData from "./communityData";
+
 const CommunityPage = () => {
-  const data = communityData;
-
   return (
-    <section id="community" className="bg-gray-50 py-16">
+    <div className="bg-gray-50 min-h-screen">
 
-      <div className="max-w-5xl mx-auto px-4 space-y-6">
+      <Navbar />
 
-        <CommunityHeader data={data} />
-        <CommunityDescription data={data} />
-        <EventsSection event={data.event} />
-        <HostSection host={data.host} />
-        <LocationSection location={data.location} />
-        <ReviewsSection reviews={data.reviews} />
+      <main className="pt-20 max-w-3xl mx-auto px-4 space-y-6">
 
-      </div>
+        {/* These components use full data */}
+        <CommunityHeader data={communityData} />
+        <CommunityDescription data={communityData} />
 
-    </section>
+        {/* These need specific props */}
+        <EventsSection event={communityData.event} />
+
+        <HostSection host={communityData.host} />
+
+        <LocationSection location={communityData.location} />
+
+        <ReviewsSection reviews={communityData.reviews} />
+
+      </main>
+
+      <Footer />
+
+    </div>
   );
 };
 

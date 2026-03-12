@@ -44,18 +44,37 @@ const Footer = () => {
                        <ul className="space-y-4 text-gray-500 text-sm">
   {['Home', 'About', 'How it Works', 'Testimonials', 'Community', 'Contact'].map((item) => (
     <li key={item}>
-      {item === 'Contact' ? (
-        <Link to="/contact" className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group">
+
+      {/* COMMUNITY PAGE */}
+      {item === 'Community' ? (
+        <Link
+          to="/community"
+          className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group"
+        >
           {item}
         </Link>
+      ) : item === 'Contact' ? (
+
+        /* CONTACT PAGE */
+        <Link
+          to="/contact"
+          className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group"
+        >
+          {item}
+        </Link>
+
       ) : (
+
+        /*HOME SCROLL SECTIONS */
         <a
           href={`/#${item.replace(/\s+/g, '-').toLowerCase()}`}
           className="hover:text-[#E31C5D] transition-colors flex items-center gap-2 group"
         >
           {item}
         </a>
+
       )}
+
     </li>
   ))}
 </ul>

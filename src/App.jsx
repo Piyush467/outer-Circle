@@ -14,6 +14,8 @@ const App = () => {
       <Routes>
         {/* Main Home Route */}
         <Route path="/" element={<Home />} />
+        {/* community page */}
+        <Route path="/community" element={<CommunityPage />} />
         
         {/* Contact Route */}
         <Route path="/contact" element={<ContactPage />} />
@@ -25,8 +27,7 @@ const App = () => {
         {/* Catch all - Redirect to Home or 404 */}
         <Route path="*" element={<Home />} />
 
-        {/* community page */}
-        <Route path="/community/:id" element={<CommunityPage />} />
+        
       </Routes>
     </Router>
   );
