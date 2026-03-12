@@ -1,13 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const EventCard = ({ event }) => {
-  const navigate = useNavigate();   // ✅ MUST be here (top level)
 
   return (
     <div
-      onClick={() => navigate("/event")}   // ✅ navigate on click
-      className="flex gap-4 bg-white p-4 rounded-xl shadow text-gray-900 cursor-pointer hover:shadow-lg transition"
+      className="flex gap-4 bg-white p-4 rounded-xl shadow text-gray-900"
     >
 
       {/* Event Image */}

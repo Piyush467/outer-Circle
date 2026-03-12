@@ -79,7 +79,7 @@ const Navbar = () => {
         {/* ===== DESKTOP MENU ===== */}
         <div className="hidden md:flex items-center space-x-8">
 
-          {['Home', 'About', 'How it Works','Testimonials', 'Community', 'Contact'].map((item) => {
+          {['Home', 'About', 'How it Works','Testimonials', 'Community','Event', 'Contact'].map((item) => {
 
             // COMMUNITY PAGE
             if (item === 'Community') {
@@ -97,6 +97,22 @@ const Navbar = () => {
                 </Link>
               );
             }
+            // EVENT PAGE
+if (item === 'Event') {
+  return (
+    <Link
+      key={item}
+      to="/event"
+      className={`font-medium ${
+        location.pathname === "/event"
+          ? 'text-[#E31C5D]'
+          : 'text-gray-700 hover:text-[#E31C5D]'
+      }`}
+    >
+      {item}
+    </Link>
+  );
+}
 
             //CONTACT PAGE
             if (item === 'Contact') {
@@ -153,7 +169,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-white border-b border-gray-100 shadow-lg md:hidden p-4 flex flex-col gap-4">
 
-          {['Home', 'About', 'How it Works','Testimonials', 'Community', 'Contact'].map((item) => {
+          {['Home', 'About', 'How it Works','Testimonials', 'Community','Event', 'Contact'].map((item) => {
 
             // COMMUNITY
             if (item === 'Community') {
@@ -172,6 +188,23 @@ const Navbar = () => {
                 </Link>
               );
             }
+            // EVENT
+if (item === 'Event') {
+  return (
+    <Link
+      key={item}
+      to="/event"
+      onClick={() => setIsOpen(false)}
+      className={`font-medium ${
+        location.pathname === "/event"
+          ? 'text-[#E31C5D]'
+          : 'text-gray-700'
+      }`}
+    >
+      {item}
+    </Link>
+  );
+}
 
             // CONTACT
             if (item === 'Contact') {
