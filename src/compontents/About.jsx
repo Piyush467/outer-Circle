@@ -66,7 +66,7 @@ const About = () => {
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
             We are bridging the gap between <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E31C5D] to-purple-600">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E31C5D] to-purple-600">
               Online & Offline.
             </span>
           </h1>
@@ -127,7 +127,7 @@ const About = () => {
                 { icon: Globe, title: "Hyper Local", text: "Discover what's happening within 5km of you." },
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-pink-50 text-[#E31C5D] flex items-center justify-center">
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-pink-50 text-[#E31C5D] flex items-center justify-center">
                     <item.icon size={20} />
                   </div>
                   <div>

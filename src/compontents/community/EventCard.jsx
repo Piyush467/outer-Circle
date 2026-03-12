@@ -6,7 +6,7 @@ const EventCard = ({ event }) => {
 
   return (
     <div
-      onClick={() => navigate(`/event/${event.id}`)}   // ✅ navigate on click
+      onClick={() => navigate("/event")}   // ✅ navigate on click
       className="flex gap-4 bg-white p-4 rounded-xl shadow text-gray-900 cursor-pointer hover:shadow-lg transition"
     >
 
