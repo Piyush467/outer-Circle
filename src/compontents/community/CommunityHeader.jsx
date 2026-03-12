@@ -27,9 +27,9 @@ const CommunityHeader = ({ data }) => {
           </div>
 
           {/* RIGHT — Subscribe Button */}
-          <button className="bg-[#E31C5D] text-white px-6 py-2 rounded-lg font-semibold shadow-lg">
-            Subscribed
-          </button>
+          <button className="bg-[#E31C5D] text-white px-6 py-2 rounded-lg font-semibold shadow-lg transition-all duration-300 hover:bg-[#c91852] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg">
+  Subscribed
+</button>
 
         </div>
 
