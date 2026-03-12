@@ -7,6 +7,7 @@ import About from '../compontents/About';
 import HowItWorks from '../compontents/HowItWorks';
 import Footer from '../compontents/Footer';
 import Testimonials from '../compontents/Testimonial';
+import CommunityPage from '../compontents/community/CommunityPage';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -37,6 +38,7 @@ const Home = () => {
       <About />
       <HowItWorks />
       <Testimonials />
+      <CommunityPage />
       <Footer />
     </div>
   );

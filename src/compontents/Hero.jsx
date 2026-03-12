@@ -47,7 +47,7 @@ const Hero = () => {
           <img 
             src="/download.jpg" 
             alt="App Mockup" 
-            className="relative z-10 w-[280px] md:w-[320px] rounded-[3rem]  shadow-2xl"
+            className="relative z-10 w-70 md:w-[320px] rounded-[3rem]  shadow-2xl"
           />
         </div>
       </div>

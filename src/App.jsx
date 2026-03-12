@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy'; // Ensure path is correct
 import TermsAndConditions from './pages/TermsAndConditions';
 import ContactPage from './pages/ContactPage';
+import CommunityPage from './compontents/community/CommunityPage';
 
 const App = () => {
   return (
@@ -23,6 +24,9 @@ const App = () => {
         
         {/* Catch all - Redirect to Home or 404 */}
         <Route path="*" element={<Home />} />
+
+        {/* community page */}
+        <Route path="/community/:id" element={<CommunityPage />} />
       </Routes>
     </Router>
   );
