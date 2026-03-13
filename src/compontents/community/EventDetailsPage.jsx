@@ -1,5 +1,8 @@
 import React from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+
 import communityData from "./communityData";
 import AboutEventSection from "./AboutEventSection";
 
@@ -20,65 +23,65 @@ const EventDetailsPage = () => {
   const host = communityData.host;
 
   return (
-    <div className="bg-gray-50 text-gray-900  min-h-screen pb-24">
+    <div className="bg-gray-50 min-h-screen">
 
-      {/* ===== TOP POSTER ===== */}
-      <div className="relative">
+      {/* SAME AS COMMUNITY PAGE */}
+      <Navbar />
 
-        <img
-          src={event.image}
-          alt="poster"
-          className="w-full h-64 object-cover"
-        />
+      {/* ===== CENTERED CONTENT ===== */}
+      <main className="pt-20 max-w-3xl mx-auto px-4 space-y-6 pb-28">
 
-        {/* Top Icons */}
-        <div className="absolute top-4 left-4 right-4 flex justify-between">
+        {/* ===== POSTER ===== */}
+        <div className="relative rounded-xl overflow-hidden">
 
-          <button
-            onClick={() => navigate(-1)}
-            className="bg-white/90 shadow p-3 rounded-full"
-          >
-            <ArrowLeft size={20} className="text-gray-800" />
-          </button>
+          <img
+            src={event.image}
+            alt="poster"
+            className="w-full h-64 object-cover"
+          />
 
-          <div className="flex gap-3">
-            <button className="bg-white shadow p-3 rounded-full">
-              <Share2 size={20} className="text-gray-800"  />
+          {/* Icons */}
+          <div className="absolute top-4 left-4 right-4 flex justify-between">
+
+            <button
+              onClick={() => navigate(-1)}
+              className="bg-white/90 shadow p-3 rounded-full"
+            >
+              <ArrowLeft size={20} />
             </button>
 
-            <button className="bg-white shadow p-3 rounded-full">
-              <Flag size={20} className="text-gray-800"/>
-            </button>
+            <div className="flex gap-3">
+              <button className="bg-white shadow p-3 rounded-full">
+                <Share2 size={20} />
+              </button>
+
+              <button className="bg-white shadow p-3 rounded-full">
+                <Flag size={20} />
+              </button>
+            </div>
+
           </div>
-
         </div>
-      </div>
 
-      {/* ===== CONTENT ===== */}
-      <div className="px-5 py-6 space-y-6">
-
-        {/* Title */}
+        {/* ===== TITLE ===== */}
         <h1 className="text-2xl font-semibold">
           {event.title}
         </h1>
 
-        {/* Event Info Cards */}
+        {/* ===== EVENT INFO ===== */}
         <div className="space-y-4">
 
-          {/* Date */}
           <InfoRow
             icon={<Calendar />}
             title="April 1, 2026"
             subtitle="Wednesday, 9:30 PM – 11:59 PM"
           />
 
-          {/* Location */}
           <InfoRow
             icon={<MapPin />}
             title={event.location}
           />
 
-          {/* Going */}
           <InfoRow
             icon={<HelpCircle />}
             title="0 Going"
@@ -86,7 +89,7 @@ const EventDetailsPage = () => {
 
         </div>
 
-        {/* Organizer */}
+        {/* ===== ORGANIZER ===== */}
         <div className="flex items-center gap-4 pt-4">
           <img
             src={host.avatar}
@@ -98,11 +101,10 @@ const EventDetailsPage = () => {
           </span>
         </div>
 
-        {/* About Event */}
-        {/* About Event */}
-          <AboutEventSection description={event.description} />
+        {/* ===== ABOUT ===== */}
+        <AboutEventSection description={event.description} />
 
-        {/* Location Map */}
+        {/* ===== LOCATION ===== */}
         <div className="pt-6 space-y-3">
           <h2 className="text-lg font-semibold">Location</h2>
 
@@ -113,26 +115,30 @@ const EventDetailsPage = () => {
               height="200"
               style={{ border: 0 }}
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
               title="map"
             />
           </div>
 
-          {/* Get Directions */}
           <button className="w-full bg-gray-100 text-pink-400 py-3 rounded-xl flex items-center justify-center gap-2 font-medium">
             <Navigation size={18} />
             Get Directions
           </button>
         </div>
 
+      </main>
+
+      {/* ===== STICKY BUTTON (MATCHED WIDTH) ===== */}
+      <div className="fixed bottom-0 left-0 w-full bg-white border-t">
+
+        <div className="max-w-3xl mx-auto p-4">
+          <button className="w-full bg-[#E31C5D] text-white py-4 rounded-xl font-semibold text-lg shadow hover:bg-[#c91852] transition">
+            Register
+          </button>
+        </div>
+
       </div>
 
-      {/* ===== STICKY REGISTER BUTTON ===== */}
-      <div className="fixed bottom-0 left-0 w-full bg-white p-4 border-t border-gray-200">
-        <button className="w-full bg-[#E31C5D] py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#c91852] transition">
-          Register
-        </button>
-      </div>
+      <Footer />
 
     </div>
   );
@@ -141,8 +147,7 @@ const EventDetailsPage = () => {
 export default EventDetailsPage;
 
 
-
-/* ===== SMALL REUSABLE COMPONENT ===== */
+/* ===== SMALL COMPONENT ===== */
 
 const InfoRow = ({ icon, title, subtitle }) => (
   <div className="flex gap-4 items-start">
