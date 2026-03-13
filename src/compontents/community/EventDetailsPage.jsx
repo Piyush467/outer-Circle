@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
@@ -18,6 +18,7 @@ import {
 
 const EventDetailsPage = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const event = communityData.event;
   const host = communityData.host;
@@ -25,9 +26,9 @@ const EventDetailsPage = () => {
   // register handler
   const handleRegister = () => {
   window.open(
-    "https://outercircleapp.com/community/YOUR_EVENT_LINK",
-    "_blank"
-  );
+  `https://outercircleapp.com/community/${id}`,
+  "_blank"
+);
 };
 
   return (

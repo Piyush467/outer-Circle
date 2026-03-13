@@ -16,8 +16,8 @@ const App = () => {
         {/* Main Home Route */}
         <Route path="/" element={<Home />} />
         {/* community page */}
-        <Route path="/community" element={<CommunityPage />} />
-        <Route path="/event/" element={<EventDetailsPage />} />
+       <Route path="/community/:id" element={<CommunityPage />} />
+<Route path="/event/:id" element={<EventDetailsPage />} />
         
         {/* Contact Route */}
         <Route path="/contact" element={<ContactPage />} />

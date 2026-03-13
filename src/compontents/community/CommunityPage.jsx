@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
@@ -12,6 +13,8 @@ import ReviewsSection from "./ReviewsSection";
 import communityData from "./communityData";
 
 const CommunityPage = () => {
+
+  const { id } = useParams();
 
 
 // const API_URL =
@@ -40,9 +43,9 @@ const CommunityPage = () => {
 
 const handleSubscribe = () => {
   window.open(
-    "https://outercircleapp.com/community/eyJpdiI6InNNTVBPdkRPV045MnJCdDIzNVE3aXc9PSIsInZhbHVlIjoiVkd6VUI5VDloeXRTZ3JhZEFNU1U2QT09IiwibWFjIjoiODJjMWJhOGQ4NTgwNGRlZTg1OTZhYjc3YjlhNTg3OGM1MWNhMDk2NDc4MmQ4ZTM1ZTRjYTE5NjdjNzE5Y2JiNiIsInRhZyI6IiJ9",
-    "_blank"
-  );
+  `https://outercircleapp.com/community/${id}`,
+  "_blank"
+);
 };
 
 
