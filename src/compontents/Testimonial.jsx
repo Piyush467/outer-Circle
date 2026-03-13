@@ -117,7 +117,7 @@ const Testimonials = () => {
                   style={{ width: `${100 / itemsPerPage}%`, flex: '0 0 auto' }}
                   className="px-4"
                 >
-                  <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between h-full min-h-[350px] relative hover:shadow-xl transition-all duration-300">
+                  <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between h-full min-h-87.5 relative hover:shadow-xl transition-all duration-300">
                     
                     {/* Big Quote Background */}
                     <div className="absolute top-6 right-6 opacity-10">

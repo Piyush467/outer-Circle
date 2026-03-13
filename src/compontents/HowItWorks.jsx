@@ -2,6 +2,18 @@ import React from 'react';
 import { MapPin, Users, Calendar, ArrowRight } from 'lucide-react';
 
 const HowItWorks = () => {
+  // download button handler
+  const handlePlayStoreClick = () => {
+  const ua = navigator.userAgent;
+
+  if (/Android/i.test(ua)) {
+    window.open(
+      "https://play.google.com/store/apps/details?id=com.co.CommunityX",
+      "_blank"
+    );
+  }
+  // iOS & Desktop - do nothing
+};
   return (
     <section id="how-it-works" className="py-10 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +58,7 @@ const HowItWorks = () => {
                 }
               ].map((step, index) => (
                 <div key={index} className="flex gap-6 bg-white p-4 rounded-2xl shadow-sm border border-gray-100 relative z-10 hover:shadow-md transition-shadow">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#E31C5D] flex items-center justify-center shadow-lg shadow-pink-200">
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-[#E31C5D] flex items-center justify-center shadow-lg shadow-pink-200">
                     {step.icon}
                   </div>
                   <div>
@@ -75,7 +87,9 @@ const HowItWorks = () => {
                     </button>
                     
                     {/* Play Store Button */}
-                    <button className="transform hover:-translate-y-1 transition-transform duration-300">
+                    <button 
+                      onClick={handlePlayStoreClick}
+                      className="transform hover:-translate-y-1 transition-transform duration-300">
                         <img 
                             src="/play.png" 
                             alt="Get it on Google Play" 
@@ -97,7 +111,7 @@ const HowItWorks = () => {
                     <img 
                         src="/app.png" 
                         alt="App Interface" 
-                        className="w-[500px] h-[300px] lg:w-[500px] lg:h-[700px] object-cover"
+                        className="w-125 h-75 lg:w-125 lg:h-175 object-cover"
                     />
                 </div>
             </div>

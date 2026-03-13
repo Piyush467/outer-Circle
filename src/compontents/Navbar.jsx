@@ -7,6 +7,18 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   const location = useLocation();
+  // download button function
+  const handleDownloadApp = () => {
+  const ua = navigator.userAgent;
+
+  if (/Android/i.test(ua)) {
+    window.open(
+      "https://play.google.com/store/apps/details?id=com.co.CommunityX",
+      "_blank"
+    );
+  }
+  // iOS & Desktop - do nothing
+};
 
   // Scroll tracking ONLY for Home page
   useEffect(() => {
@@ -149,7 +161,10 @@ if (item === 'Event') {
           })}
 
           {/* Download Button */}
-          <button className="bg-[#E31C5D] text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-[#c91852] transition-transform hover:-translate-y-0.5 shadow-md">
+          <button
+  onClick={handleDownloadApp}
+  className="bg-[#E31C5D] text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-[#c91852] transition-transform hover:-translate-y-0.5 shadow-md"
+>
             Download App
           </button>
 
@@ -189,17 +204,17 @@ if (item === 'Event') {
               );
             }
             // EVENT
-if (item === 'Event') {
-  return (
-    <Link
-      key={item}
-      to="/event"
-      onClick={() => setIsOpen(false)}
-      className={`font-medium ${
-        location.pathname === "/event"
-          ? 'text-[#E31C5D]'
-          : 'text-gray-700'
-      }`}
+             if (item === 'Event') {
+               return (
+                <Link
+                  key={item}
+                  to="/event"
+                    onClick={() => setIsOpen(false)}
+                     className={`font-medium ${
+                   location.pathname === "/event"
+                          ? 'text-[#E31C5D]'
+                            : 'text-gray-700'
+                    }`}
     >
       {item}
     </Link>
@@ -243,6 +258,14 @@ if (item === 'Event') {
               </a>
             );
           })}
+          {/* ===== MOBILE DOWNLOAD BUTTON ===== */}
+<button
+  onClick={handleDownloadApp}
+  className="mt-4 w-full bg-[#E31C5D] text-white py-3 rounded-lg font-semibold shadow"
+>
+  Download App
+</button>
+          
         </div>
       )}
     </nav>

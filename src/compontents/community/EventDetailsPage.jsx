@@ -29,7 +29,7 @@ const EventDetailsPage = () => {
       <Navbar />
 
       {/* ===== CENTERED CONTENT ===== */}
-      <main className="pt-20 max-w-3xl mx-auto px-4 space-y-6 pb-28">
+      <main className="pt-20 max-w-3xl mx-auto px-4 space-y-6 pb-10">
 
         {/* ===== POSTER ===== */}
         <div className="relative rounded-xl overflow-hidden">
@@ -127,16 +127,12 @@ const EventDetailsPage = () => {
 
       </main>
 
-      {/* ===== STICKY BUTTON (MATCHED WIDTH) ===== */}
-      <div className="fixed bottom-0 left-0 w-full bg-white border-t">
-
-        <div className="max-w-3xl mx-auto p-4">
-          <button className="w-full bg-[#E31C5D] text-white py-4 rounded-xl font-semibold text-lg shadow hover:bg-[#c91852] transition">
-            Register
-          </button>
-        </div>
-
-      </div>
+    {/* ===== REGISTER BUTTON ===== */}
+<div className="pt-6 flex justify-center">
+  <button className="bg-[#E31C5D] text-white w-64 py-3 rounded-lg font-semibold shadow hover:bg-[#c91852] transition">
+  Register
+</button>
+</div>
 
       <Footer />
 

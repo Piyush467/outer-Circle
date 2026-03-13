@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import {  ArrowRight } from 'lucide-react';
 
 // SVG Icons for Store Buttons
 const AppleLogo = () => (
@@ -20,6 +21,19 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
+  // download button handler
+  const handlePlayStoreClick = () => {
+  const ua = navigator.userAgent;
+
+  if (/Android/i.test(ua)) {
+    window.open(
+      "https://play.google.com/store/apps/details?id=com.co.CommunityX",
+      "_blank"
+    );
+  }
+  // iOS & Desktop - do nothing
+};
+
   return (
     <section ref={heroRef} id="home" className="pt-28 pb-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
@@ -36,6 +50,34 @@ const Hero = () => {
             Connect with people nearby, join micro-events, and create your own circle. 
             The easiest way to socialize locally.
           </p>
+
+          {/* Download Buttons Area */}
+            <div className="mt-12">
+                <p className="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    Available now on iOS & Android <ArrowRight size={16} className="text-[#E31C5D]"/>
+                </p>
+                <div className="flex flex-wrap gap-4">
+                    {/* Apple Store Button */}
+                    <button className="transform hover:-translate-y-1 transition-transform duration-300">
+                        <img 
+                            src="/apple.png" 
+                            alt="Download on App Store" 
+                            className="h-12 w-auto object-contain" 
+                        />
+                    </button>
+                    
+                    {/* Play Store Button */}
+                    <button 
+                     onClick={handlePlayStoreClick}
+                     className="transform hover:-translate-y-1 transition-transform duration-300">
+                        <img 
+                            src="/play.png" 
+                            alt="Get it on Google Play" 
+                            className="h-12 w-auto object-contain" 
+                        />
+                    </button>
+                </div>
+            </div>
           
          
 
