@@ -1,7 +1,17 @@
 import React from "react";
 
 const CommunityHeader = ({ data }) => {
+
+ 
+const handleSubscribe = () => {
+  window.open(
+    "https://outercircleapp.com/community/eyJpdiI6InNNTVBPdkRPV045MnJCdDIzNVE3aXc9PSIsInZhbHVlIjoiVkd6VUI5VDloeXRTZ3JhZEFNU1U2QT09IiwibWFjIjoiODJjMWJhOGQ4NTgwNGRlZTg1OTZhYjc3YjlhNTg3OGM1MWNhMDk2NDc4MmQ4ZTM1ZTRjYTE5NjdjNzE5Y2JiNiIsInRhZyI6IiJ9",
+    "_blank"
+  );
+};
+
   return (
+
     <div className="rounded-2xl overflow-hidden bg-white text-gray-900">
 
       {/* ===== PINK BANNER ===== */}
@@ -27,7 +37,9 @@ const CommunityHeader = ({ data }) => {
           </div>
 
           {/* RIGHT — Subscribe Button */}
-          <button className="bg-[#E31C5D] text-white px-6 py-2 rounded-lg font-semibold shadow-lg transition-all duration-300 hover:bg-[#c91852] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg">
+          <button  
+            onClick={handleSubscribe}
+            className="bg-[#E31C5D] text-white px-6 py-2 rounded-lg font-semibold shadow-lg transition-all duration-300 hover:bg-[#c91852] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg">
   Subscribed
 </button>
 

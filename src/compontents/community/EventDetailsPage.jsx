@@ -22,6 +22,14 @@ const EventDetailsPage = () => {
   const event = communityData.event;
   const host = communityData.host;
 
+  // register handler
+  const handleRegister = () => {
+  window.open(
+    "https://outercircleapp.com/community/YOUR_EVENT_LINK",
+    "_blank"
+  );
+};
+
   return (
     <div className="bg-gray-50 min-h-screen">
 
@@ -129,7 +137,9 @@ const EventDetailsPage = () => {
 
     {/* ===== REGISTER BUTTON ===== */}
 <div className="pt-6 flex justify-center">
-  <button className="bg-[#E31C5D] text-white w-64 py-3 rounded-lg font-semibold shadow hover:bg-[#c91852] transition">
+  <button 
+     onClick={handleRegister}
+     className="bg-[#E31C5D] text-white w-64 py-3 mb-5 rounded-lg font-semibold shadow hover:bg-[#c91852] transition">
   Register
 </button>
 </div>

@@ -3,6 +3,18 @@ import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    // download button handler
+  const handlePlayStoreClick = () => {
+  const ua = navigator.userAgent;
+
+  if (/Android/i.test(ua)) {
+    window.open(
+      "https://play.google.com/store/apps/details?id=com.co.CommunityX",
+      "_blank"
+    );
+  }
+  // iOS & Desktop - do nothing
+};
     return (
         <footer className="bg-white pt-6 lg:pt-16 pb-10 border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +54,7 @@ const Footer = () => {
                     <div className="md:pl-10"> {/* Added padding-left for better spacing */}
                         <h4 className="text-lg font-bold text-gray-900 mb-6">Quick Links</h4>
                        <ul className="space-y-4 text-gray-500 text-sm">
-  {['Home', 'About', 'How it Works', 'Testimonials', 'Community', 'Contact'].map((item) => (
+  {['Home', 'About', 'How it Works', 'Testimonials', 'Contact'].map((item) => (
     <li key={item}>
 
       {/* COMMUNITY PAGE */}
@@ -90,7 +102,9 @@ const Footer = () => {
                             <button className="hover:-translate-y-1 transition-transform duration-300 w-fit">
                                 <img src="/apple.png" alt="Download on App Store" className="h-12 w-auto object-contain" />
                             </button>
-                            <button className="hover:-translate-y-1 transition-transform duration-300 w-fit">
+                            <button 
+                              onClick={handlePlayStoreClick}
+                              className="hover:-translate-y-1 transition-transform duration-300 w-fit">
                                 <img src="/play.png" alt="Get it on Google Play" className="h-12 w-auto object-contain" />
                             </button>
                         </div>

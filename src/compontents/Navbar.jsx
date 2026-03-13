@@ -91,7 +91,7 @@ const Navbar = () => {
         {/* ===== DESKTOP MENU ===== */}
         <div className="hidden md:flex items-center space-x-8">
 
-          {['Home', 'About', 'How it Works','Testimonials', 'Community','Event', 'Contact'].map((item) => {
+          {['Home', 'About', 'How it Works','Testimonials', 'Contact'].map((item) => {
 
             // COMMUNITY PAGE
             if (item === 'Community') {
@@ -184,7 +184,7 @@ if (item === 'Event') {
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-white border-b border-gray-100 shadow-lg md:hidden p-4 flex flex-col gap-4">
 
-          {['Home', 'About', 'How it Works','Testimonials', 'Community','Event', 'Contact'].map((item) => {
+          {['Home', 'About', 'How it Works','Testimonials', 'Contact'].map((item) => {
 
             // COMMUNITY
             if (item === 'Community') {
